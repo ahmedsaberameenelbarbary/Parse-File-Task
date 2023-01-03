@@ -4,10 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class ParseFileService {
+public class ParseFileServiceApp {
 
 	public static void main(String[] args) {
-		SpringApplication.run(ParseFileService.class, args);
+		SpringApplication.run(ParseFileServiceApp.class, args);
 	}
 
 }
