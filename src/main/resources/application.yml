@@ -1,0 +1,39 @@
+server:
+  port: 8080
+
+application:
+  name: Parse-File
+
+spring:
+  profiles:
+    active: local
+
+  ### KAFKA CONFIG ###
+  kafka:
+    consumer:
+      bootstrap-servers: localhost:9092
+      group-id: group-id
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+      # value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      properties:
+        spring:
+          json:
+            trusted:
+              packages: '*'
+    producer:
+      bootstrap-servers: localhost:9092
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+      #value-serializer: org.apache.kafka.common.serialization.StringSerializer
+
+file:
+  upload:
+    base-directory: src/main/resources/reports/
+
+
+
+
+
+
